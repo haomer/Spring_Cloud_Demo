@@ -1,0 +1,12 @@
+server:
+  port: 25555
+  compression:
+        enabled: true
+        min-response-size: 1
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
+

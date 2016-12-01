@@ -1,0 +1,12 @@
+server:
+  port: 25556
+  compression:
+        enabled: true
+        min-response-size: 1
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:25555/eureka/
+spring:
+  application:
+          name: service-A

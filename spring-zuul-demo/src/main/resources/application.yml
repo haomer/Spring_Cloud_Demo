@@ -1,0 +1,25 @@
+server:
+  port: 26666
+  compression:
+        enabled: true
+        min-response-size: 1
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:25555/eureka/
+spring:
+  application:
+          name: api-gateway
+
+# routes to url
+zuul:
+  routes:
+    api-a:
+        path: /api-a/**
+        serviceId: service-A
+    api-b:
+        path: /api-b/**
+        serviceId: service-B
+    api-a-url:
+            path: /api-a-url/**
+            url: http://localhost:25556/
